@@ -1,7 +1,7 @@
 import React, { HTMLProps } from 'react';
 
 interface IBox extends HTMLProps<HTMLDivElement> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Box: React.FC<IBox> = ({ children, className, ...rest }) => {

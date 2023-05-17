@@ -5,7 +5,7 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FC<IButton> = ({ children, className, ...rest }) => {
-  const buttonClassName = `bg-yellow-300 px-5 py-3 mt-8 rounded-md text-sky-400 uppercase font-semibold ${
+  const buttonClassName = `bg-yellow-300 px-5 py-3 rounded-md text-sky-400 uppercase font-semibold ${
     className || ''
   }`;
 
