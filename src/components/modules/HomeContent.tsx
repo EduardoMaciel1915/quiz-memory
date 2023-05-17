@@ -1,10 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Box, Button, Flex } from '../elements';
+import { Box, Button, Flex, Input } from '../elements';
 import Image from 'next/image';
 
-const CardHome: React.FC = () => {
+const HomeContent: React.FC = () => {
   const router = useRouter();
 
   return (
@@ -24,10 +24,7 @@ const CardHome: React.FC = () => {
       <span className="text-4xl font-semibold text-white">Quiz da Memória</span>
 
       <Box className="gap-4 mt-[3rem]">
-        <input
-          className="rounded-md h-[3rem] p-3"
-          placeholder="Digite aqui o seu nome:"
-        />
+        <Input placeholder="Digite aqui o seu nome:" />
 
         <Button onClick={() => router.push('/quiz')}>Iniciar</Button>
       </Box>
@@ -35,4 +32,4 @@ const CardHome: React.FC = () => {
   );
 };
 
-export default CardHome;
+export default HomeContent;

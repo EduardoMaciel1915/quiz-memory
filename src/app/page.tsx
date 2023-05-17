@@ -1,9 +1,9 @@
-import { Box, CardHome } from '@/components';
+import { Box, HomeContent } from '@/components';
 
 export default function Home() {
   return (
     <Box>
-      <CardHome />
+      <HomeContent />
     </Box>
   );
 }
