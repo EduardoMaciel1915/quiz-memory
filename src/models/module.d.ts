@@ -11,4 +11,5 @@ interface QuizQuestion {
 interface QuizOption {
   key: number;
   label: string;
+  isCorrect: boolean;
 }
