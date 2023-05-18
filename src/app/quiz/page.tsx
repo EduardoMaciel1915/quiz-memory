@@ -3,11 +3,36 @@
 import { useState } from 'react';
 
 import { Box, QuizContent, Flex } from '@/components';
+import { useRouter } from 'next/navigation';
 
 export default function Quiz() {
+  const router = useRouter();
   const [questionActive, setQuestionActive] = useState<number>(1);
 
-  const handleNextQuestion = () => {
+  const [answers, setAnswers] = useState<number[]>([]);
+
+  const colorCircle = (questionKey: number) => {
+    if (answers?.[questionKey - 1] === quizQuestions?.[questionKey - 1]?.answer) {
+      return 'bg-green-400';
+    }
+
+    if (
+      answers?.[questionKey - 1] !== quizQuestions?.[questionKey - 1]?.answer &&
+      questionKey < questionActive
+    ) {
+      return 'bg-red-400';
+    }
+  };
+
+  const handleNextQuestion = (option: QuizOption) => {
+    setAnswers(answers => [...answers, option.key]);
+
+    if (questionActive === quizQuestions?.length) {
+      router.push('/result');
+
+      return;
+    }
+
     setQuestionActive(question => question + 1);
   };
 
@@ -59,7 +84,7 @@ export default function Quiz() {
           label: 'Memória implícita',
         },
       ],
-      answer: 3,
+      answer: 4,
     },
     {
       key: 3,
@@ -132,12 +157,14 @@ export default function Quiz() {
       <span className="text-4xl font-semibold text-white mb-5">Quiz da Memória</span>
 
       <Flex className="mb-5 gap-4">
-        {quizQuestions?.map((question, key) => (
+        {quizQuestions?.map(question => (
           <Box
-            key={key}
-            className="rounded-full w-[2rem] h-[2rem] border-white border-solid border-2 justify-center items-center text-white"
+            key={question?.key}
+            className={`rounded-full w-[2rem] h-[2rem] border-white border-solid border-2 justify-center items-center text-white ${colorCircle(
+              question?.key
+            )}`}
           >
-            {key + 1}
+            {question?.key}
           </Box>
         ))}
       </Flex>
