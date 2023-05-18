@@ -64,7 +64,7 @@ export default function Quiz() {
     },
     {
       key: 2,
-      label: 'De qual memória pertence a habilidade da garota: - memória implícita',
+      label: 'De qual memória pertence a habilidade da garota:',
       image: '/menina.jpg',
       options: [
         {
@@ -88,7 +88,7 @@ export default function Quiz() {
     },
     {
       key: 3,
-      label: 'Qual imagem está o Pikachu correto? - memória falsa',
+      label: 'Qual imagem está o Pikachu correto?',
       image: '/pikachu.jpg',
       options: [
         {
@@ -104,7 +104,7 @@ export default function Quiz() {
     },
     {
       key: 4,
-      label: 'Qual perda de memória está relacionada a amnésia da Dory? - amnésia',
+      label: 'Qual perda de memória está relacionada a amnésia da Dory?',
       image: '/dory.jpg',
       options: [
         {
@@ -128,7 +128,7 @@ export default function Quiz() {
     },
     {
       key: 5,
-      label: 'Que animal é esse? - memória semântica',
+      label: 'Que animal é esse?',
       image: '/caty.png',
       options: [
         {
