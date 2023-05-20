@@ -7,7 +7,7 @@ export const quizQuestions: QuizQuestion[] = [
     options: [
       {
         key: 1,
-        label: 'Semâticas',
+        label: 'Semânticas',
         isCorrect: false,
       },
       {
